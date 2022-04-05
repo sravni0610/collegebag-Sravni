@@ -1,21 +1,4 @@
-#Author: your.email@your.domain.com
-#Keywords Summary :
-#Feature: List of scenarios.
-#Scenario: Business rule through list of steps with arguments.
-#Given: Some precondition step
-#When: Some key actions
-#Then: To observe outcomes or validation
-#And,But: To enumerate more Given,When,Then steps
-#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
-#Examples: Container for s table
-#Background: List of steps run before each of the scenarios
-#""" (Doc Strings)
-#| (Data Tables)
-#@ (Tags/Labels):To group Scenarios
-#<> (placeholder)
-#""
-## (Comments)
-#Sample Feature Definition Template
+
 @Students
 
 Feature: Collegebag Students valid/invalid scenarios
@@ -24,9 +7,13 @@ Feature: Collegebag Students valid/invalid scenarios
 @Students1
 
 Scenario: Student Valid Details-- Positive
-Given User navigating to Collegebag application
-When User enters admin credentials
-And click on login  
-And click on Students
-When user enter valid Student name
-Then Students can display the Details
+Given User navigating to "chrome" browser
+    When  Navigating to "http://localhost:4200/"
+    Then  User enter "admin@gmail.com" and "admin123"
+    And  User click on Sign in Button
+    And verify the title of the page "Portal | College Bag"
+    And User click on "Students" from navigation Panel
+    And user should add a new Student with  course type "Master of Computer Science"
+    Then  FirstName as "Alex" LastName as "Victor"
+    And  click on gender as "Male"
+    And Close the driver

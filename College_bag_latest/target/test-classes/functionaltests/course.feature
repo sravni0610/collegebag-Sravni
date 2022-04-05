@@ -1,43 +1,17 @@
-#Author: your.email@your.domain.com
-#Keywords Summary :
-#Feature: List of scenarios.
-#Scenario: Business rule through list of steps with arguments.
-#Given: Some precondition step
-#When: Some key actions
-#Then: To observe outcomes or validation
-#And,But: To enumerate more Given,When,Then steps
-#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
-#Examples: Container for s table
-#Background: List of steps run before each of the scenarios
-#""" (Doc Strings)
-#| (Data Tables)
-#@ (Tags/Labels):To group Scenarios
-#<> (placeholder)
-#""
-## (Comments)
-#Sample Feature Definition Template
 
-      
- @Courses 
- Feature: Checking Course details valid/invalid scenarios
+@Courses 
+ Feature: Checking  and Adding the new Course details 
 
 @ValidCoursesname
 
-Scenario: Courses Valid Details-- Positive
-Given User navigating to Collegebag application
-When User enters admin credentials
-And click on login  
-And click on Courses
-When user enter valid course name
-Then Courses can display the Details
-      
-@InValidCoursesname
-
-Scenario: Courses InValid Details-- Positive
-Given User navigating to Collegebag application
-When User enters admin credentials
-And click on login  
-And click on Courses
-When user enter Invalid course name
-Then Courses can display the Invalid Details
+Scenario: User Checking  Valid Course Details-
+Given  User Navigating to "chrome" browser
+    When  User Navigating to "http://localhost:4200/"
+    Then  User enter "admin@gmail.com" and "admin123"
+    And  User click on Sign in Button
+    And verify the title of the page "Portal | College Bag"
+    And User click on "Courses" from navigation Panel
+    And User should add a new course "Master of Science" with acroynm "MSC"
+    And Close the driver
+    
       
